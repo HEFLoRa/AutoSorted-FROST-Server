@@ -9,8 +9,8 @@ environment:
   - persistence_db_url=jdbc:postgresql://database:5432/sensorthings
   - persistence_db_username=sensorthings
   - persistence_db_password=ChangeMe
-  - persistence_autoUpdateDatabase=true
   - persistence_alwaysOrderbyId=true
+  - persistence_autoUpdateDatabase=true
 ports:
   - 8080:8080
   - 1883:1883
