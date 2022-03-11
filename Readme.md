@@ -37,7 +37,7 @@ For the case that FROST-server shall be reachable at a specific URL, it must be 
 
         environment:
 
-          - serviceRootUrl=https://gi3.gis.lrg.tum.de/frost
+          - serviceRootUrl=https://sensor-server.hef.tum.de/frost
 
           - ...
 
