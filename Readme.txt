@@ -1,6 +1,8 @@
 Wichtig zu wissen: 
 
-For the (default) case that FROST-server shall be reachable at server adresse (can also be an URL) but with generic port adress:
+Attribute "ports" defines the mapping from external to internal port of a docker container (left=external, right = internal: 8080:8080). Don't change the internal port only the external port when setting up a new FROST-Server container (i.e. keep 8080 AND 1883 fixed).
+
+For the (default) case that FROST-server shall be reachable at server adresse (can be URL or IP) but with generic port adress:
 
 services:
   web:
@@ -11,7 +13,6 @@ services:
     ports:
       - 8080:8080
       - 1883:1883
-
 
 
 For the case that FROST-server shall be reachable at a specific URL it must be specified to be reachable inside only from the localhost (127.0.0.1) and from outside only by a reverse proxy (needs to be configured elsewhere at e.g. apache or Tomcat server):
