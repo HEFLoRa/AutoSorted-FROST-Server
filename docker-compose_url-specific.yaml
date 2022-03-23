@@ -1,7 +1,5 @@
 version: '2'
-volumes:
-  frost_postgis_volume:
-    external: true
+
 services:
   web:
     image: fraunhoferiosb/frost-server:latest
@@ -21,12 +19,15 @@ services:
       - 127.0.0.1:1883:1883
     depends_on:
       - database
-    restart: always  database:
+    restart: always 
+  database:
     image: postgis/postgis:11-2.5-alpine
     environment:
       - POSTGRES_DB=sensorthings
-      - POSTGRES_USER=sensoradmin
-      - POSTGRES_PASSWORD=Npi6yIssTmdbrXvqKHgg
+      - POSTGRES_USER=sensorthings
+      - POSTGRES_PASSWORD=ChangeMe
     volumes:
-      - frost_postgis_volume:/var/lib/postgresql/data
+      - postgis_volume:/var/lib/postgresql/data
     restart: always
+volumes:
+    postgis_volume:
